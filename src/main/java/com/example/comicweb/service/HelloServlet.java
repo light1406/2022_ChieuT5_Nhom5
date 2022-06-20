@@ -1,6 +1,8 @@
 package com.example.comicweb.service;
 
 import com.example.comicweb.dao.ComicDao;
+import com.example.comicweb.obj.Chapter;
+import com.example.comicweb.obj.Page;
 
 import java.io.*;
 import java.util.List;
@@ -20,9 +22,9 @@ public class HelloServlet extends HttpServlet {
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        List<String> category = comicDao.getCategory("01");
+        List<Chapter> chapters = comicDao.getChapterList("01");
 
-        request.setAttribute("list", category);
+        request.setAttribute("chapters", chapters);
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 

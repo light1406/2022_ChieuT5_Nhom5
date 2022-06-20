@@ -3,6 +3,7 @@ package com.example.comicweb.dao;
 import com.example.comicweb.connect.ComicDb;
 import com.example.comicweb.obj.Chapter;
 import com.example.comicweb.obj.Comic;
+import com.example.comicweb.obj.Page;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -28,8 +29,82 @@ public class ComicDao {
 
     public List<Comic> getBanner(){return null;}
     public List<Comic> getNewUpdate(){return null;}
-    public Comic getComic(String comicId){return null;}
-    public Chapter getChapter(String chapterId) {return null;}
+    public Comic getComic(String comicId){
+        try {
+            String query = "select * from chapter where id = ?";
+            statement = connection.prepareStatement(query);
+            statement.setString(1, comicId);
+            ResultSet resultC = statement.executeQuery();
+            return resultC.next() ?
+                    new Comic()
+                    : null;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public List<Chapter> getChapterList(String comicId){
+        try {
+            String queryPagesChapter = "select * from chapter where comic_id = ?";
+            statement = connection.prepareStatement(queryPagesChapter);
+            statement.setString(1, comicId);
+            List<Chapter> chapters = new ArrayList<>();
+            ResultSet result = statement.executeQuery();
+            while (result.next()){
+                chapters.add(new Chapter(result.getString("id")
+                        ,result.getInt("number")
+                        ,result.getString("title")
+                        ,result.getInt("view")
+                        ,result.getDate("time_update")
+                        ,getPages(result.getString("id"))));
+            }
+            return chapters;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Chapter getChapter(String chapterId) {
+        try {
+            String queryChapter = "select * from chapter where id = ?";
+            statement = connection.prepareStatement(queryChapter);
+            statement.setString(1, chapterId);
+            ResultSet resultC = statement.executeQuery();
+            return resultC.next() ?
+                    new Chapter(resultC.getString("id")
+                                ,resultC.getInt("number")
+                                ,resultC.getString("title")
+                                ,resultC.getInt("view")
+                                ,resultC.getDate("time_update")
+                                ,getPages(chapterId))
+                    : null;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public List<Page> getPages(String chapterId){
+        try {
+            String queryPagesChapter = "select number, url from page where chapter_id = ?";
+            statement = connection.prepareStatement(queryPagesChapter);
+            statement.setString(1, chapterId);
+            List<Page> pages = new ArrayList<>();
+            ResultSet resultP = statement.executeQuery();
+            while (resultP.next()){
+                pages.add(new Page(resultP.getInt("number"),
+                        resultP.getString("url")));
+            }
+            return pages;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public List<String> getCategory(String comicId){
         try {
             List<String> category = new ArrayList<>();
