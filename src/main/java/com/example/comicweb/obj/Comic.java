@@ -10,12 +10,12 @@ public class Comic {
     private String state;
     private long view;
     private String content;
-    private String category;
+    private List<String> categorys;
     private List<Chapter> chapters;
 
     public Comic(){}
 
-    public Comic(String id, String name, String cover, String author, String state, long view, String content, String category, List<Chapter> chapters) {
+    public Comic(String id, String name, String cover, String author, String state, long view, String content, List<String> categorys, List<Chapter> chapters) {
         this.id = id;
         this.name = name;
         this.cover = cover;
@@ -23,7 +23,7 @@ public class Comic {
         this.state = state;
         this.view = view;
         this.content = content;
-        this.category = category;
+        this.categorys = categorys;
         this.chapters = chapters;
     }
 
@@ -39,8 +39,8 @@ public class Comic {
         return author;
     }
 
-    public String getCategory() {
-        return category;
+    public List<String> getCategorys() {
+        return categorys;
     }
 
     public String getContent() {

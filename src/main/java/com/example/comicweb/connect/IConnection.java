@@ -1,4 +1,7 @@
 package com.example.comicweb.connect;
 
-public class IConnection {
+import java.sql.Connection;
+
+public interface IConnection {
+    Connection getConnection();
 }
