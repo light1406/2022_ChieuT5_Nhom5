@@ -1,2 +1,2 @@
 # WEBSITE TRUYEN TRANH
-## Sequence diagram
+### Sequence diagram
