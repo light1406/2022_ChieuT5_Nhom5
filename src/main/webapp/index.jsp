@@ -39,10 +39,11 @@
                                     </a>
                                     <div class="base-info">
                                         <div class="name">
-                                            <a href="" class="text-white">${item.name}</a>
+                                            <a href="${pageContext.request.contextPath}/comic-detail?comic-id=${item.id}" class="text-white">${item.name}</a>
                                         </div>
                                         <div class="chapter">
-                                            <a href="" class="text-size-small text-white">Chapter ${item.getMostNewUpdate().number}</a>
+                                            <a href="${pageContext.request.contextPath}/chapter?comic-id=${item.id}&chapter-id=${item.getMostNewUpdate().id}"
+                                               class="text-size-small text-white">Chapter ${item.getMostNewUpdate().number}</a>
                                             <span class="text-size-small text-white text-itali">54 giây trước</span>
                                         </div>
                                     </div>
@@ -63,7 +64,7 @@
                 <c:forEach items="${new_update}" var="item">
                     <div class="comic-card">
                         <div class="cover">
-                            <a href="">
+                            <a href="${pageContext.request.contextPath}/comic-detail?comic-id=${item.id}">
                                 <img src="${pageContext.request.contextPath}${item.cover}" alt="">
                             </a>
                             <div class="base-eva">
@@ -75,7 +76,7 @@
                             </div>
                         </div>
                         <div class="name">
-                            <a href="">${item.name}</a>
+                            <a href="${pageContext.request.contextPath}/comic-detail?comic-id=${item.id}">${item.name}</a>
                         </div>
                         <ul class="chapter">
                             <c:forEach items="${item.getThreeChapterNewUpdate()}" var="chap">

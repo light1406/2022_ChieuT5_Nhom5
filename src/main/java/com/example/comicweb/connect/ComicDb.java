@@ -7,7 +7,7 @@ public class ComicDb {
     private static ComicDb comicDb;
 
     private ComicDb(){
-        iConnection = new MySQLConnection("jdbc:mysql://b968d3e8e312e8:7a03316f@us-cdbr-east-05.cleardb.net/heroku_ecfa244169f8b57?reconnect=true"
+        iConnection = new MySQLConnection("jdbc:mysql://b968d3e8e312e8:7a03316f@us-cdbr-east-05.cleardb.net/heroku_ecfa244169f8b57?autoReconnect=true"
                                             , null, null);
     }
 
