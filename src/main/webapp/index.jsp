@@ -44,7 +44,7 @@
                                         <div class="chapter">
                                             <a href="${pageContext.request.contextPath}/chapter?comic-id=${item.id}&chapter-id=${item.getMostNewUpdate().id}"
                                                class="text-size-small text-white">Chapter ${item.getMostNewUpdate().number}</a>
-                                            <span class="text-size-small text-white text-itali">54 giây trước</span>
+                                            <span class="text-size-small text-white text-itali">${item.getMostNewUpdate().timeUpdate}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -81,8 +81,9 @@
                         <ul class="chapter">
                             <c:forEach items="${item.getThreeChapterNewUpdate()}" var="chap">
                                 <li>
-                                    <a href="" class="text-size-small">Chapter ${chap.number}</a>
-                                    <span class="text-size-small text-gray text-itali">54 giây trước</span>
+                                    <a href="${pageContext.request.contextPath}/chapter?comic-id=${item.id}&chapter-id=${chap.id}"
+                                       class="text-size-small">Chapter ${chap.number}</a>
+                                    <span class="text-size-small text-gray text-itali">${chap.timeUpdate}</span>
                                 </li>
                             </c:forEach>
                         </ul>
