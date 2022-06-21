@@ -1,2 +1,2 @@
 # WEBSITE TRUYEN TRANH
-h3 Sequence diagram
+(h3)Sequence diagram
