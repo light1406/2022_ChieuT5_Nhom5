@@ -45,4 +45,8 @@ public class Chapter {
     public List<Page> getPages() {
         return pages;
     }
+
+    public boolean isChapter(String id){
+        return this.id.equals(id);
+    }
 }
