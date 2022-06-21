@@ -1,4 +1,4 @@
 # WEBSITE TRUYEN TRANH
 ### Sequence diagram
-#####Chức năng đọc truyện:  
-![asd](https://drive.google.com/file/d/1VMoL2sv52Gp-cwxtNTL4z20rkrSds47u/view?usp=sharing)
+#### Chức năng đọc truyện:  
+![asd](https://github.com/light1406/2022_ChieuT5_Nhom5/blob/main/sequence/ReadComic.jpg)
