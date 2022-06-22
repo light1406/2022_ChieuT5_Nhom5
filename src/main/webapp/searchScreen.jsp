@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,112 +16,33 @@
         <H2 class="text-center">Kết quả</H2>
         <div class="col1">
             <div class="row">
-                <div class="col-sm-3">
-                    <div class="card">
-                        <img class="img-comic card-img-top img-thumbnail" src="assert/img/comic/daivuongthamang/cover.jpg"
-                             alt="Card image" >
-                        <div class="card-body">
-                            <h4 class="card-title">Đại Vương tha mạng</h4>
-                            <p class="card-text">Trung Quốc.</p>
-                            <a href="" class="btn btn-secondary">Đọc truyện</a>
+<%--                thay card bang nay di cho no dong bo--%>
+                <div class="comic-card">
+                    <div class="cover">
+                        <a href="${pageContext.request.contextPath}/comic-detail?comic-id=${item.id}">
+                            <img src="${pageContext.request.contextPath}${item.cover}" alt="">
+                        </a>
+                        <div class="base-eva">
+                                <span>
+                                    <i class="fa-solid fa-eye"></i> ${item.view}
+                                    <i class="fa-solid fa-comment"></i> 0
+                                    <i class="fa-solid fa-heart"></i> 0
+                                </span>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card">
-                        <img class="img-comic card-img-top img-thumbnail" src="assert/img/comic/daivuongthamang/cover.jpg"
-                             alt="Card image" >
-                        <div class="card-body">
-                            <h4 class="card-title">Đại Vương tha mạng</h4>
-                            <p class="card-text">Trung Quốc.</p>
-                            <a href="" class="btn btn-secondary">Đọc truyện</a>
-                        </div>
+                    <div class="name">
+                        <a href="${pageContext.request.contextPath}/comic-detail?comic-id=${item.id}">${item.name}</a>
                     </div>
+                    <ul class="chapter">
+                        <c:forEach items="${item.getThreeChapterNewUpdate()}" var="chap">
+                            <li>
+                                <a href="${pageContext.request.contextPath}/chapter?comic-id=${item.id}&chapter-id=${chap.id}"
+                                   class="text-size-small">Chapter ${chap.number}</a>
+                                <span class="text-size-small text-gray text-itali">${chap.timeUpdate}</span>
+                            </li>
+                        </c:forEach>
+                    </ul>
                 </div>
-                <div class="col-sm-3">
-                    <div class="card">
-                        <img class="img-comic card-img-top img-thumbnail" src="assert/img/comic/daivuongthamang/cover.jpg"
-                             alt="Card image" >
-                        <div class="card-body">
-                            <h4 class="card-title">Đại Vương tha mạng</h4>
-                            <p class="card-text">Trung Quốc.</p>
-                            <a href="" class="btn btn-secondary">Đọc truyện</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card">
-                        <img class="img-comic card-img-top img-thumbnail" src="assert/img/comic/daivuongthamang/cover.jpg"
-                             alt="Card image" >
-                        <div class="card-body">
-                            <h4 class="card-title">Đại Vương tha mạng</h4>
-                            <p class="card-text">Trung Quốc.</p>
-                            <a href="" class="btn btn-secondary">Đọc truyện</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card">
-                        <img class="img-comic card-img-top img-thumbnail" src="assert/img/comic/toanchucphapsu/cover.jpg"
-                             alt="Card image" >
-                        <div class="card-body">
-                            <h4 class="card-title">Toàn chức pháp sư</h4>
-                            <p class="card-text">Trung Quốc.</p>
-                            <a href="" class="btn btn-secondary">Đọc truyện</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card">
-                        <img class="img-comic card-img-top img-thumbnail" src="assert/img/comic/toanchucphapsu/cover.jpg"
-                             alt="Card image" >
-                        <div class="card-body">
-                            <h4 class="card-title">Toàn chức pháp sư</h4>
-                            <p class="card-text">Trung Quốc.</p>
-                            <a href="" class="btn btn-secondary">Đọc truyện</a>
-                        </div>
-                    </div>
-                </div> <div class="col-sm-3">
-                <div class="card">
-                    <img class="img-comic card-img-top img-thumbnail" src="assert/img/comic/toanchucphapsu/cover.jpg"
-                         alt="Card image" >
-                    <div class="card-body">
-                        <h4 class="card-title">Toàn chức pháp sư</h4>
-                        <p class="card-text">Trung Quốc.</p>
-                        <a href="" class="btn btn-secondary">Đọc truyện</a>
-                    </div>
-                </div>
-            </div> <div class="col-sm-3">
-                <div class="card">
-                    <img class="img-comic card-img-top img-thumbnail" src="assert/img/comic/toanchucphapsu/cover.jpg"
-                         alt="Card image" >
-                    <div class="card-body">
-                        <h4 class="card-title">Toàn chức pháp sư</h4>
-                        <p class="card-text">Trung Quốc.</p>
-                        <a href="" class="btn btn-secondary">Đọc truyện</a>
-                    </div>
-                </div>
-            </div> <div class="col-sm-3">
-                <div class="card">
-                    <img class="img-comic card-img-top img-thumbnail" src="assert/img/comic/toanchucphapsu/cover.jpg"
-                         alt="Card image" >
-                    <div class="card-body">
-                        <h4 class="card-title">Toàn chức pháp sư</h4>
-                        <p class="card-text">Trung Quốc.</p>
-                        <a href="" class="btn btn-secondary">Đọc truyện</a>
-                    </div>
-                </div>
-            </div> <div class="col-sm-3">
-                <div class="card">
-                    <img class="img-comic card-img-top img-thumbnail" src="assert/img/comic/toanchucphapsu/cover.jpg"
-                         alt="Card image" >
-                    <div class="card-body">
-                        <h4 class="card-title">Toàn chức pháp sư</h4>
-                        <p class="card-text">Trung Quốc.</p>
-                        <a href="" class="btn btn-secondary">Đọc truyện</a>
-                    </div>
-                </div>
-            </div>
             </div>
         </div>
     </div>
