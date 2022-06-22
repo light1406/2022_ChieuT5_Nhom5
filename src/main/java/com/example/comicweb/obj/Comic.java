@@ -1,6 +1,8 @@
 package com.example.comicweb.obj;
 
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Comic {
     private String id;
@@ -61,5 +63,18 @@ public class Comic {
 
     public List<Chapter> getChapters() {
         return chapters;
+    }
+
+    public Chapter getMostNewUpdate(){return chapters.get(chapters.size() - 1);}
+
+    public List<Chapter> getThreeChapterNewUpdate(){
+        return chapters.size() > 3 ? chapters.subList(chapters.size() - 4, chapters.size() - 1) : chapters;
+    }
+
+    public Chapter getChapter(String chapterId){
+        return chapters.stream()
+                .filter(c -> c.isChapter(chapterId))
+                .findFirst()
+                .get();
     }
 }

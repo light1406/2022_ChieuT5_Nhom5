@@ -27,21 +27,74 @@ public class ComicDao {
         return comicDao;
     }
 
-    public List<Comic> getBanner(){return null;}
-    public List<Comic> getNewUpdate(){return null;}
+    public List<Comic> getBanner(){
+        try {
+            String query = "select id, name, cover, author, state, view, content from comic";
+            statement = connection.prepareStatement(query);
+            ResultSet result = statement.executeQuery();
+            List<Comic> comics = new ArrayList<>();
+            while(result.next()){
+                comics.add(new Comic(result.getString("id")
+                        ,result.getString("name")
+                        ,result.getString("cover")
+                        ,result.getString("author")
+                        ,result.getString("state")
+                        ,result.getLong("view")
+                        ,result.getString("content")
+                        ,getCategory(result.getString("id"))
+                        ,getChapterList(result.getString("id"))));
+            }
+            return comics;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public List<Comic> getNewUpdate(){
+        try {
+            String query = "select id, name, cover, author, state, view, content from comic";
+            statement = connection.prepareStatement(query);
+            ResultSet result = statement.executeQuery();
+            List<Comic> comics = new ArrayList<>();
+            while(result.next()){
+                comics.add(new Comic(result.getString("id")
+                        ,result.getString("name")
+                        ,result.getString("cover")
+                        ,result.getString("author")
+                        ,result.getString("state")
+                        ,result.getLong("view")
+                        ,result.getString("content")
+                        ,getCategory(result.getString("id"))
+                        ,getChapterList(result.getString("id"))));
+            }
+            return comics;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public Comic getComic(String comicId){
         try {
-            String query = "select * from chapter where id = ?";
+            String query = "select id, name, cover, author, state, view, content from comic where id = ?";
             statement = connection.prepareStatement(query);
             statement.setString(1, comicId);
-            ResultSet resultC = statement.executeQuery();
-            return resultC.next() ?
-                    new Comic()
+            ResultSet result = statement.executeQuery();
+            return result.next() ?
+                    new Comic(result.getString("id")
+                    ,result.getString("name")
+                    ,result.getString("cover")
+                    ,result.getString("author")
+                    ,result.getString("state")
+                    ,result.getLong("view")
+                    ,result.getString("content")
+                    ,getCategory(comicId)
+                    ,getChapterList(comicId))
                     : null;
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return null;
     }
 
