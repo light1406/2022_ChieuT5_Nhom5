@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    <jsp:include page="IdeaProjects/ComicWeb/src/main/webapp/Header.jsp"/>
+    <jsp:include page="Header.jsp"/>
     <div class="container">
         <div class="banner">
             <div class="title">
@@ -34,6 +34,7 @@
                         <c:forEach items="${banner}" var="item">
                             <li class="splide__slide">
                                 <div class="comic-banner__item">
+                                    <%--1.Chọn truyện --%>
                                     <a href="${pageContext.request.contextPath}/comic-detail?comic-id=${item.id}">
                                         <img src="${pageContext.request.contextPath}${item.cover}" alt="">
                                     </a>
@@ -64,6 +65,7 @@
                 <c:forEach items="${new_update}" var="item">
                     <div class="comic-card">
                         <div class="cover">
+                            <%--1.Chọn truyện--%>
                             <a href="${pageContext.request.contextPath}/comic-detail?comic-id=${item.id}">
                                 <img src="${pageContext.request.contextPath}${item.cover}" alt="">
                             </a>

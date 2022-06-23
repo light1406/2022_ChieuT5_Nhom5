@@ -28,6 +28,6 @@ public class ChapterController extends HttpServlet {
         Chapter chapter = comic.getChapter(chapterId);
         request.setAttribute("comic", comic);
         request.setAttribute("chapter", chapter);
-        request.getRequestDispatcher(request.getContextPath() + "/ChapterScreen.jsp").forward(request, response);
+        request.getRequestDispatcher("ChapterScreen.jsp").forward(request, response);
     }
 }

@@ -1,0 +1,64 @@
+.head {
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.head span{
+    display: block;
+}
+
+.base-info .left img{
+    display: block;
+    width: 250px;
+    height: 353px;
+    margin: auto;
+}
+
+.base-info .right .info-list li{
+    margin: 10px 0;
+}
+
+.base-info .right .button-group{
+    padding-left: 10px;
+}
+
+.content{
+    width: 100%
+}
+
+.content .content__main{
+    padding: 10px 5px;
+}
+
+.title{
+    border-bottom: 3px solid var(--light-blue) ;
+    padding: 10px 0;
+}
+
+.list-chapter .list-head{
+    margin-top: 10px;
+    margin-bottom:10px;
+}
+
+.list-chapter ul{
+    border: 1px solid var(--light-gray);
+    padding: 5px;
+}
+
+.list-chapter ul li{
+    margin-top: 14px;
+    margin-bottom: 5px;
+    border-bottom: 1px dashed var(--light-gray);
+}
+
+.list-chapter ul li a{
+    color: black;
+}
+
+
+.list-chapter ul li a:hover{
+    text-decoration: none;
+    color: var(--light-blue);
+}
