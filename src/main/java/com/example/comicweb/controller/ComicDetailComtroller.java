@@ -21,6 +21,6 @@ public class ComicDetailComtroller extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String comicId = request.getParameter("comic-id");
         request.setAttribute("comic", comicDao.getComic(comicId));
-        request.getRequestDispatcher(request.getContextPath() + "/comic_detail.jsp").forward(request,response);
+        request.getRequestDispatcher(request.getContextPath() + "/ComicDetailScreen.jsp").forward(request,response);
     }
 }

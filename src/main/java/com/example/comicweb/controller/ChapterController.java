@@ -25,8 +25,9 @@ public class ChapterController extends HttpServlet {
         String comicId = request.getParameter("comic-id");
         String chapterId = request.getParameter("chapter-id");
         Comic comic = comicDao.getComic(comicId);
+        Chapter chapter = comic.getChapter(chapterId);
         request.setAttribute("comic", comic);
-        request.setAttribute("chapter", comic.getChapter(chapterId));
-        request.getRequestDispatcher(request.getContextPath() + "/chapter.jsp").forward(request, response);
+        request.setAttribute("chapter", chapter);
+        request.getRequestDispatcher(request.getContextPath() + "/ChapterScreen.jsp").forward(request, response);
     }
 }

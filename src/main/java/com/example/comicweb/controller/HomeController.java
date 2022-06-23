@@ -25,6 +25,6 @@ public class HomeController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("banner", comicDao.getBanner());
         req.setAttribute("new_update", comicDao.getNewUpdate());
-        req.getRequestDispatcher("index.jsp").forward(req, resp);
+        req.getRequestDispatcher("HomeScreen.jsp").forward(req, resp);
     }
 }

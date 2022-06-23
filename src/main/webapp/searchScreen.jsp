@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assert/css/header.css">
 </head>
 <body>
-<jsp:include page="header.jsp"/>
+<jsp:include page="IdeaProjects/ComicWeb/src/main/webapp/Header.jsp"/>
 <div id="main">
     <div class="result">
         <H2 class="text-center">Kết quả</H2>
