@@ -174,4 +174,40 @@ public class ComicDao {
         }
         return null;
     }
+
+    public List<Comic> searchComic(String name) {
+        List<Comic> comics = new ArrayList();
+        ResultSet result =null;
+        try {
+            statement = connection.prepareStatement("SELECT * FROM comic WHERE name= ? ");
+            statement.setString(1, name);
+            result = statement.executeQuery();
+            while (result.next()) {
+                comics.add(new Comic(result.getString("id")
+                        ,result.getString("name")
+                        ,result.getString("cover")
+                        ,result.getString("author")
+                        ,result.getString("state")
+                        ,result.getLong("view")
+                        ,result.getString("content")
+                        ,getCategory(result.getString("id"))
+                        ,getChapterList(result.getString("id"))));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (statement != null) {
+                    statement.close();
+                }
+                if (result != null) {
+                    result.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return comics;
+    }
+
 }

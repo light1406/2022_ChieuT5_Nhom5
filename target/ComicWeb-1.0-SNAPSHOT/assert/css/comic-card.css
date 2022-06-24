@@ -1,0 +1,70 @@
+.comic-card{
+    width: 192px;
+    padding: 0 7px;
+    margin: 10px 0;
+}
+
+.comic-card .cover{
+    width: 100%;
+    height: 240px;
+    position: relative;
+}
+
+.comic-card .cover img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.comic-card .cover .base-eva{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.comic-card .cover .base-eva::before{
+    content: '';
+    width: 100%;
+    height: 20px;
+    background-color: var(--dark-gray);
+    position: absolute;
+    bottom: 0;
+    opacity: 0.8;
+}
+
+.comic-card .cover .base-eva span{
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    padding: 0 5px;
+    z-index: 20;
+}
+
+.comic-card .name{
+    padding: 10px 0;
+}
+
+.comic-card .name a{
+    text-transform: capitalize;
+    color: black;
+}
+
+.comic-card .name a:hover{
+    text-decoration: none;
+    color: var(--blue);
+}
+
+.comic-card li{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.comic-card li a{
+    color: var(--dark-gray);
+}
+
+.comic-card li a:hover{
+    color: var(--blue);
+    text-decoration: none;
+}

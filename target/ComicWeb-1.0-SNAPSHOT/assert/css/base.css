@@ -1,0 +1,81 @@
+:root{
+    --white: #ffff;
+    --dark-violet: #3f3567;
+    --light-violet: #ae4ad9;
+    --dark-gray: #3c3c3c;
+    --gray: #bdbac8;
+    --light-gray: #e4e4e4;
+    --blue:#0026ff;
+    --light-blue: #2997e0;
+    --orange: #e6921e;
+    --light-orange: #f0ad4e;
+    --light-red: #d9534f;
+    --dark-red: #8c1814;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Tahoma';
+    font-size: 16px;
+}
+
+.text-size-small{font-size: 13px;}
+.text-size-big{font-size: 21px;}
+.text-gray{color: var(--gray);}
+.text-blue{color: var(--light-blue)}
+.text-violet{color: var(--light-violet);}
+.text-white{color: var(--white);}
+.text-itali{font-style: italic;}
+.text-uppercase{text-transform: uppercase;}
+.text-capitalize{text-transform: capitalize;}
+.text-center{text-align: center;}
+
+.gray-bg{background-color: var(--light-gray);}
+
+.nor-button{background-color: var(--white);}
+.nor-button:hover{background-color: var(--gray);}
+.orange-button{
+    border: 1px solid var(--orange);
+    background-color: var(--light-orange); 
+    color: var(--white);
+    cursor: pointer;
+}
+.orange-button:hover{background-color: var(--orange);}
+.red-button{
+    border: 1px solid var(--dark-red);
+    background-color: var(--light-red); 
+    color: var(--white);
+    cursor: pointer;
+}
+.red-button:hover{background-color: var(--dark-red);}
+
+input{
+    outline: none;
+    padding: 0 10px;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.button-1{
+    border-radius: 5px;
+    padding: 6px 12px;
+    margin: 0px 3px;
+}
+
+.container{
+    width: 1030px;
+    margin: auto;
+    padding: 10px;
+    background-color: var(--white);
+}
