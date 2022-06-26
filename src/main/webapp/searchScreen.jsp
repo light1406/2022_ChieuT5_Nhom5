@@ -23,7 +23,7 @@
 <%--<jsp:include page="IdeaProjects/ComicWeb/src/main/webapp/Header.jsp"/>--%>
 <jsp:include page="Header.jsp"/>
 <div id="main">
-    <div class="result">
+    <div class="result" style="padding: 0 15px 0">
         <H2 class="text-center">Kết quả</H2>
         <div class="col1">
             <div class="row">
@@ -59,7 +59,7 @@
             </div>
         </div>
     </div>
-    <div class="type-list">
+    <div class="type-list" style="padding-left: 25px;">
         <h2 class="text-center">Thể loại</h2>
         <ul style="list-style-type:none;">
             <li><a href="">Action</a></li>
