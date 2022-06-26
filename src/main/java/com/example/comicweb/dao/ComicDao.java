@@ -179,7 +179,7 @@ public class ComicDao {
         List<Comic> comics = new ArrayList();
         ResultSet result =null;
         try {
-            statement = connection.prepareStatement("SELECT * FROM comic WHERE name= ? ");
+            statement = connection.prepareStatement("select id, name, cover, author, state, view, content FROM comic WHERE name = ? ");
             statement.setString(1, name);
             result = statement.executeQuery();
             while (result.next()) {

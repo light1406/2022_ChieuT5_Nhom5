@@ -1,7 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%
-    String error = (String) request.getAttribute("error");
-%>
+
 <div id="app">
     <header class="header" id="header">
         <div class="navbar">
@@ -11,17 +9,9 @@
                 </a>
             </div>
             <form class="navbar-search" action="/ComicWeb_war/Search" method="get">
-                <%
-                    if (error != null) {
-                %>
-                <div class="alert alert-danger" role="danger">
-                    <%= error%>
-                </div>
-                <%
-                    }
-                %>
-                <input type="text" class="navbar-search__input" id="name" <% if(request.getParameter("name")!=null){%>
-                       value="<%=request.getParameter("name")%>" <% }%> name="name" placeholder="Tìm truyện..."/>
+<%--                <% if(request.getParameter("name")!=null){%>--%>
+<%--                value="<%=request.getParameter("name")%>" <% }%>--%>
+                <input type="text" class="navbar-search__input" id="name"  name="name" placeholder="Tìm truyện..."/>
                 <div class="navbar-search-btn-group">
                     <span class="navbar-search-bt__icon"><i class="fa-solid fa-magnifying-glass"></i></span>
                     <input type="submit" value class="navbar-search__btn nor-button"/>
