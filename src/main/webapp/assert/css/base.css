@@ -37,14 +37,14 @@
 .nor-button:hover{background-color: var(--gray);}
 .orange-button{
     border: 1px solid var(--orange);
-    background-color: var(--light-orange); 
+    background-color: var(--light-orange);
     color: var(--white);
     cursor: pointer;
 }
 .orange-button:hover{background-color: var(--orange);}
 .red-button{
     border: 1px solid var(--dark-red);
-    background-color: var(--light-red); 
+    background-color: var(--light-red);
     color: var(--white);
     cursor: pointer;
 }
