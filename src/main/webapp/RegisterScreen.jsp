@@ -1,5 +1,10 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%
+    String error = (String) request.getAttribute("error");
+
+%>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,25 +21,36 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assert/css/home.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assert/css/header.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assert/css/register.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assert/css/boostrap.min.css">
 
     <!-- SPLIDE -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/node_modules/@splidejs/splide/dist/css/themes/splide-default.min.css">
+    <link rel="stylesheet"
+          href="${pageContext.request.contextPath}/node_modules/@splidejs/splide/dist/css/themes/splide-default.min.css">
 </head>
 
 <body>
 <jsp:include page="Header.jsp"/>
 
-<div class="container">
-    <form method="post" autocomplete="on">
+<div class="container_register d-flex justify-content-center">
+    <form action="register" method="post" autocomplete="on">
+        <%if (error != null) { %>
+        <div class="alert alert-danger" role="alert">
+            <%=error%>
+        </div>
+        <%} %>
 
         <div class="box">
-            <label for="firstName" class="fl fontLabel"> Họ tên: </label>
+            <label for="fullName" class="fl fontLabel"> Họ tên: </label>
             <div class="new iconBox">
                 <i class="fa fa-user" aria-hidden="true"></i>
             </div>
             <div class="fr">
-                <input type="text" name="firstName" placeholder="Họ tên"
-                       class="textBox" autofocus="on" required id="firstName">
+                <input type="text"
+                       name="fullName"
+                       placeholder="Họ tên"
+                       class="textBox"
+                       autofocus="on"
+                       required id="fullName">
             </div>
             <div class="clr"></div>
         </div>
@@ -45,8 +61,13 @@
                 <i class="fa fa-user" aria-hidden="true"></i>
             </div>
             <div class="fr">
-                <input type="text" name="userName" placeholder="Tên đăng nhập"
-                       class="textBox" autofocus="on" required id="userName">
+                <input
+                        type="text"
+                        name="userName"
+                        placeholder="Tên đăng nhập"
+                        class="textBox"
+                        autofocus="on"
+                        required id="userName">
             </div>
             <div class="clr"></div>
         </div>
@@ -60,6 +81,7 @@
                         required name="password"
                         placeholder="Mật khẩu"
                         class="textBox"
+                        id="password"
 
                 >
             </div>
@@ -68,28 +90,35 @@
 
 
         <div class="box">
-            <label for="password" class="fl fontLabel"> Nhập lại mật khẩu </label>
+            <label for="re-password" class="fl fontLabel"> Nhập lại mật khẩu </label>
             <div class="fl iconBox"><i class="fa fa-key" aria-hidden="true"></i></div>
             <div class="fr">
                 <input
                         type="Password"
-                        required name="password"
+                        required
+                        name="re-password"
                         placeholder="Nhập lại mật khẩu"
                         class="textBox"
-                        id="password"
+                        id="re-password"
                 >
             </div>
             <div class="clr"></div>
         </div>
 
         <div class="box">
-            <label for="birthDay" class="fl fontLabel"> Năm sinh: </label>
+            <label for="birthYear" class="fl fontLabel"> Năm sinh: </label>
             <div class="new iconBox">
                 <i class="fa fa-calendar" aria-hidden="true"></i>
             </div>
             <div class="fr">
-                <input type="text" name="birthDay" placeholder="Năm sinh"
-                       class="textBox" autofocus="on" required id="birthDay">
+                <input
+                        type="text"
+                        name="birthYear"
+                        placeholder="Năm sinh"
+                        class="textBox"
+                        autofocus="on"
+                        required id="birthYear">
+
             </div>
             <div class="clr"></div>
         </div>
@@ -100,7 +129,10 @@
         </div>
 
     </form>
+
 </div>
+
+<script src="${pageContext.request.contextPath}/assert/js/bootstrap.min.js"></script>
 
 </body>
 </html>

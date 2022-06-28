@@ -7,7 +7,6 @@ public class User {
     private String name;
     private int birthYear;
 
-
     public User() {
     }
 
@@ -59,4 +58,15 @@ public class User {
         this.birthYear = birthYear;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", birthYear=" + birthYear +
+                '}';
+    }
 }
+

@@ -20,9 +20,10 @@
             <ul class="navbar-account">
                 <li class="login-link">
                     <a href="" class="text-white">Đăng nhập</a>
+
                 </li>
                 <li class="register-link">
-                    <a href="" class="text-white">Đăng ký</a>
+                    <a href="${pageContext.request.contextPath}/register" class="text-white">Đăng ký</a>
                 </li>
             </ul>
         </div>
