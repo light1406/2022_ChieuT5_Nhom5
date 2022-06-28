@@ -20,14 +20,14 @@ public class ChapterController extends HttpServlet {
         comicDao = ComicDao.getInstance();
     }
 
-    @Override
+    @Override//6.doGet(comic-id, chapter-id)
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String comicId = request.getParameter("comic-id");
         String chapterId = request.getParameter("chapter-id");
-        Comic comic = comicDao.getComic(comicId);
-        Chapter chapter = comic.getChapter(chapterId);
+        Comic comic = comicDao.getComic(comicId);//7.getComic(comicId)
+        Chapter chapter = comic.getChapter(chapterId);//8.getChapter(chapterId)
         request.setAttribute("comic", comic);
         request.setAttribute("chapter", chapter);
-        request.getRequestDispatcher("ChapterScreen.jsp").forward(request, response);
+        request.getRequestDispatcher("ChapterScreen.jsp").forward(request, response);//9.forward()
     }
 }
