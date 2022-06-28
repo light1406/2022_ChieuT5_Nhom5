@@ -26,17 +26,13 @@ public class RegisterController extends HttpServlet {
                 UserDao userDao = new UserDao();
                 User a = userDao.checkUserExist(username);
                 if (a == null) {
-
                     userDao.registry(fullName, password, username, birthYear);
                     response.sendRedirect("home");
-                    PrintWriter pw = response.getWriter();
-
 
                 } else {
                     request.setAttribute("error", "Tài khoản đăng ký đã tồn tại hoặc thông tin đăng ký không hợp lệ");
                     request.getRequestDispatcher("RegisterScreen.jsp").forward(request, response);
                 }
-
             } else {
                 request.setAttribute("error", "Tài khoản đăng ký đã tồn tại hoặc thông tin đăng ký không hợp lệ");
                 request.getRequestDispatcher("RegisterScreen.jsp").forward(request, response);
@@ -45,7 +41,6 @@ public class RegisterController extends HttpServlet {
             request.getRequestDispatcher("RegisterScreen.jsp").forward(request, response);
         }
     }
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);

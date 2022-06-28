@@ -3,15 +3,14 @@
     margin: 0;
 }
 body {
-
-
     background-size: cover;
 }
-
-.container {
+.container_register {
     background: #b4b2b2;
-    width: 401px;
-    height: 400px;
+    display: flex;
+    justify-content: center;
+    height: 70vh;
+    width: 60%;
     padding-bottom: 20px;
     position: absolute;
     top: 50%;
