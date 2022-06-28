@@ -80,6 +80,7 @@
         <ul>
             <c:forEach items="${comic.chapters}" var="chapter">
                 <li class="row">
+                    <%--5. Chọn chương muốn đọc--%>
                     <a href="${pageContext.request.contextPath}/chapter?comic-id=${comic.id}&chapter-id=${chapter.id}"
                        class="col-5">Chapter ${chapter.number}</a>
                     <span class="col-4 text-center text-size-small text-gray text-itali">1 giờ trước</span>

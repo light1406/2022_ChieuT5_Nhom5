@@ -1,6 +1,7 @@
 package com.example.comicweb.controller;
 
 import com.example.comicweb.dao.ComicDao;
+import com.example.comicweb.obj.Comic;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -17,10 +18,11 @@ public class ComicDetailController extends HttpServlet {
         comicDao = ComicDao.getInstance();
     }
 
-    @Override
+    @Override//2.goGet(comic-id)
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String comicId = request.getParameter("comic-id");
-        request.setAttribute("comic", comicDao.getComic(comicId));
-        request.getRequestDispatcher("ComicDetailScreen.jsp").forward(request,response);
+        Comic comic = comicDao.getComic(comicId); // 3.getComic(comicId)
+        request.setAttribute("comic", comic);
+        request.getRequestDispatcher("ComicDetailScreen.jsp").forward(request,response);//4. forward()
     }
 }
