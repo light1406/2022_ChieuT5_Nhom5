@@ -7,8 +7,16 @@ public class User {
     private String name;
     private int birthYear;
 
-
     public User() {
+    }
+
+    public User(String username, String password, String name, int birthYear) {
+        String currtime = String.valueOf(System.currentTimeMillis());
+        this.id = currtime.substring(currtime.length() - 10);
+        this.username = username;
+        this.password = password;
+        this.name = name;
+        this.birthYear = birthYear;
     }
 
     public User(String id, String username, String password, String name, int birthYear) {

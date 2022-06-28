@@ -25,7 +25,7 @@
 <jsp:include page="Header.jsp"/>
 
 <div class="container">
-    <form method="post" autocomplete="on">
+    <form method="post" autocomplete="on" action="/register">
 
         <div class="box">
             <label for="firstName" class="fl fontLabel"> Họ tên: </label>
