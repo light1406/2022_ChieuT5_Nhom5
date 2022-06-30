@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
 Created-By: IntelliJ IDEA
-Built-By: Admin
-Build-Jdk: version 17
+Built-By: ngtri
+Build-Jdk: Amazon Corretto version 17.0.3
 

@@ -8,7 +8,7 @@
                     <img src="http://st.nettruyenco.com/data/logos/logo-nettruyen.png" alt=""/>
                 </a>
             </div>
-            <form class="navbar-search" action="/ComicWeb_war/Search" method="get">
+            <form class="navbar-search" action="/Search" method="get">
 <%--                <% if(request.getParameter("name")!=null){%>--%>
 <%--                value="<%=request.getParameter("name")%>" <% }%>--%>
                 <input type="text" class="navbar-search__input" id="name"  name="name" placeholder="Tìm truyện..."/>
